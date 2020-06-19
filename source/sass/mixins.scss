@@ -1,0 +1,193 @@
+@mixin btn-reset {
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin font($font-size, $line-height) {
+  font-size: $font-size * 1px;
+  line-height: $line-height * 1px;
+}
+
+@mixin pseudo-elem {
+  content: "";
+  position: absolute;
+
+  display: block;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+@mixin button-reset {
+  box-sizing: content-box;
+  padding: 0;
+
+  font: inherit;
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+}
+
+@mixin form-reset {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  vertical-align: middle; // IE6,IE7
+  /* Browsers have different default form fonts */
+  color: inherit;
+  white-space: normal;
+
+  background: none;
+  border: 0;
+}
+
+
+//@mixin roboto-r {
+//  font-weight: 500;
+//  font-family: "Roboto", "Helvetica", sans-serif;
+//}
+//
+//@mixin roboto-b {
+//  font-weight: 600;
+//  font-family: "Roboto", "Helvetica", sans-serif;
+//}
+//
+//@mixin ibm-r {
+//  font-weight: 500;
+//  font-family: "IBM Plex Sans", "Open Sans", sans-serif;
+//}
+//
+//@mixin ibm-b {
+//  font-weight: 600;
+//  font-family: "IBM Plex Sans", "Open Sans", sans-serif;
+//}
+//
+//@mixin af-r {
+//  font-weight: 400;
+//  font-family: "Abril-fatface", "Times New Roman", "Georgia", serif;
+//}
+
+//@mixin grid-item {
+//  width: calc(100% / 3 - 57px);
+//  margin-bottom: 58px;
+//  margin-left: 50px;
+//
+//  @media (max-width: $desktop-max-width - 1) {
+//    width: calc(100% / 3 - 40px);
+//    margin-bottom: 40px;
+//    margin-left: 40px;
+//  }
+//
+//
+//  @media (max-width: $desktop-min-width - 1) {
+//    width: calc(100% / 2 - 28px);
+//    margin-bottom: 40px;
+//    margin-left: 28px;
+//  }
+//
+//  @media (max-width: $tablet-width - 1) {
+//    width: calc(100% / 2 - 20px);
+//    margin-bottom: 30px;
+//    margin-left: 20px;
+//  }
+//
+//  @media (max-width: $tablet-width - 1) {
+//    width: 100%;
+//    margin-left: 0;
+//  }
+//}
+
+//@mixin grid-min-item {
+//  width: calc(100% / 3 - 50px);
+//
+//  @media (max-width: $desktop-max-width - 1) {
+//    width: calc(100% / 3 - 30px);
+//  }
+//
+//  @media (max-width: $desktop-min-width - 1) {
+//    width: calc(100% / 2 - 20px);
+//  }
+//
+//  @media (max-width: $tablet-width - 1) {
+//    width: 100%;
+//  }
+//}
+//
+//@mixin grid-wrapper {
+//  margin-left: -50px;
+//  padding: 0;
+//
+//  @media (max-width: $desktop-max-width - 1) {
+//    margin-left: -40px;
+//  }
+//
+//  @media (max-width: $desktop-min-width - 1) {
+//    margin-left: -20px;
+//  }
+//
+//  @media (max-width: $tablet-width - 1) {
+//    margin-left: 0;
+//  }
+//}
+//
+//@mixin grid-min-wrapper {
+//  padding: 0 calc(100% / 5 + 10px);
+//
+//  @media (max-width: $desktop-max-width - 1) {
+//    padding: 0 calc(100% / 5 + 10px);
+//  }
+//
+//  @media (max-width: $desktop-min-width - 1) {
+//    padding: 0;
+//  }
+//}
+
+@mixin hover {
+  outline: none;
+  cursor: pointer;
+
+  transition: $style-change-duration;
+}
+
+@mixin not-hover {
+  &:not(:hover) {
+    transition: $style-change-duration;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}

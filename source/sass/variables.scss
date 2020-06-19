@@ -1,0 +1,26 @@
+$desktop-max-width: 1280px; /* 1280 рх и более */
+$desktop-min-width: 1024px; /* 1024-1279 рх */
+$tablet-width: 768px; /* 768-1023 рх */
+$mobile-width: 320px; /* 320-767 рх  */
+$black: #000000;
+$dark-gray-bg: #6e6e6e;
+$gray-bg: #eeeeee;
+$light-green: #52bba4;
+$green-hover: #09b48e;
+$dark-orange: #d55342;
+$light-orange: #e25d40;
+$orange-hover: #de4531;
+$orange: #d55342;
+$orange-a: #de4531;
+$gray: #6e6e6e;
+$white: #ffffff;
+$footer-bg: rgba(110, 111, 110, 0.9);
+$border-color: #535252;
+$transparent: rgba(0, 0, 0, 0);
+$retina2x-dpi: 144dpi;
+$retina2x-dppx: 1.5dppx;
+$style-change-duration: 0.3s;
+
+// Для ретиновых дисплеев
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
