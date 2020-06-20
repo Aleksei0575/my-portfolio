@@ -62,16 +62,16 @@
 }
 
 
-//@mixin roboto-r {
-//  font-weight: 500;
-//  font-family: "Roboto", "Helvetica", sans-serif;
-//}
-//
-//@mixin roboto-b {
-//  font-weight: 600;
-//  font-family: "Roboto", "Helvetica", sans-serif;
-//}
-//
+@mixin open-sans-r {
+  font-weight: 400;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
+@mixin open-sans-b {
+  font-weight: 700;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
 //@mixin ibm-r {
 //  font-weight: 500;
 //  font-family: "IBM Plex Sans", "Open Sans", sans-serif;
