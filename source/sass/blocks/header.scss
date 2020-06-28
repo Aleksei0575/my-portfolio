@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: $light-beige-bg;
@@ -45,6 +46,86 @@
     &:focus {
       @include hover;
       color: #61d0d4;
+    }
+  }
+}
+
+.header__open {
+  display: none;
+}
+
+@media (max-width: $desktop-min-width - 1) {
+  .header__open {
+    display: block;
+    width: 50px;
+    height: 50px;
+    //margin-left: 34px;
+    background-color: $darker-gray;
+
+    //background-color: $transparent;
+    background-image: url("../img/svg/open-btn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px 25px;
+    border: none;
+
+    @include font(0, 0);
+
+    &:hover,
+    &:focus {
+      @include hover;
+    }
+  }
+
+  .header__close {
+    background-image: url("../img/svg/close-btn.svg");
+  }
+
+  .header__nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10500;
+
+    display: none;
+    width: 320px;
+    margin-top: 25px;
+    margin-right: 110px;
+    margin-left: auto;
+    padding: 0;
+
+    background-color: $white;
+  }
+
+  .header__list {
+    flex-direction: column;
+
+    li {
+      border-bottom: 1px solid $gray-bg;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 37px 15px;
+      background-color: $dark-grey;
+
+      @include font(16, 21);
+
+      &[href]:hover,
+      &[href]:focus {
+        color: $white;
+
+        background-color: #61d0d4;
+        border-bottom: none;
+      }
+    }
+
+    a:not([href]) {
+      color: $white;
+
+      background-color: #61d0d4;
+      border-bottom: none;
     }
   }
 }
