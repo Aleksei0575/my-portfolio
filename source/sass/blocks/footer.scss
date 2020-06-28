@@ -1,0 +1,151 @@
+.footer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: $light-red;
+}
+
+.footer__list {
+  @include list-reset;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__item {
+  padding-left: 40px;
+  align-self: center;
+
+  &--phone {
+    position: relative;
+
+    span {
+      @include pseudo-elem;
+      top: 3px;
+      left: 0;
+    }
+
+    svg {
+      fill: $white;
+    }
+
+    p {
+      @include font(14, 16);
+      @include open-sans-b;
+      margin: 0;
+      color: $white;
+    }
+
+    a {
+      @include font(14, 16);
+      text-decoration: none;
+      color: $white;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      @include hover;
+      fill: #61d0d4;
+    }
+
+    &:hover a,
+    &:focus a {
+      @include hover;
+      color: #61d0d4;
+    }
+  }
+
+  &--mail {
+    position: relative;
+
+    span {
+      @include pseudo-elem;
+      top: 3px;
+      left: 0;
+    }
+
+    svg {
+      fill: $white;
+      stroke: $light-red;
+      stroke-width: 1px;
+    }
+
+    p {
+      @include font(14, 16);
+      @include open-sans-b;
+      margin: 0;
+      color: $white;
+    }
+
+    a {
+      @include font(14, 16);
+      text-decoration: none;
+      color: $white;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      @include hover;
+      fill: #61d0d4;
+    }
+
+    &:hover a,
+    &:focus a {
+      @include hover;
+      color: #61d0d4;
+    }
+  }
+
+  &--academy {
+    position: relative;
+
+    svg {
+      @include pseudo-elem;
+      top: 3px;
+      left: 0;
+      fill: $white;
+    }
+
+    a {
+      @include font(14, 16);
+      @include open-sans-b;
+      padding-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      color: $white;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      @include hover;
+      fill: #61d0d4;
+    }
+
+    &:hover a,
+    &:focus a {
+      @include hover;
+      color: #61d0d4;
+    }
+  }
+
+  &--copyright {
+    position: relative;
+
+    span {
+      @include pseudo-elem;
+      top: 3px;
+      left: 0;
+    }
+
+    svg {
+      fill: $white;
+      stroke: $light-red;
+      stroke-width: 1px;
+    }
+
+    p {
+      @include font(14, 16);
+      margin: 0;
+      color: $white;
+    }
+  }
+}

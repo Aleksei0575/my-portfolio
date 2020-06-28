@@ -1,0 +1,97 @@
+.about-me {
+  padding: 88px 0 88px 0;
+  background-color: $light-beige-bg;
+}
+
+.about-me__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me__img {
+  width: 40%;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+
+.about-me__info-wrapper {
+  width: 50%;
+}
+
+.about-me__greeting {
+  padding-bottom: 45px;
+}
+
+.about-me__greeting-title {
+  @include font(80, 90);
+  margin: 0;
+  color: $light-black;
+}
+
+.about-me__greeting-text {
+  @include font(46, 50);
+  margin: 0;
+  color: $light-black;
+}
+
+.about-me__info-list {
+  @include list-reset;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+
+  a {
+    @include font(14, 16);
+    @include open-sans-b;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $white;
+
+    background-color: $light-red;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      @include hover;
+      background-color: rgba(155, 36, 57, 1);
+    }
+  }
+
+  li:nth-child(2) a {
+    background-color: $aqua;
+
+    &:hover,
+    &:focus {
+      @include hover;
+      background-color: rgba(65, 139, 141, 1);
+    }
+  }
+
+  li:last-child a {
+    background-color: $light-olive;
+
+    &:hover,
+    &:focus {
+      @include hover;
+      background-color: rgba(139, 134, 25, 1);
+    }
+  }
+}
+
+.about-me__info-text {
+  @include font(14, 16);
+  margin: 0;
+  color: $light-black;
+}
