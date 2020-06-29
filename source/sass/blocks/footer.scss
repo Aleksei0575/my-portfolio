@@ -52,6 +52,10 @@
       @include hover;
       color: #61d0d4;
     }
+
+    @media (max-width: 950px) and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
   }
 
   &--mail {
@@ -92,6 +96,10 @@
     &:focus a {
       @include hover;
       color: #61d0d4;
+    }
+
+    @media (max-width: 950px) and (min-width: 768px) {
+      margin-bottom: 30px;
     }
   }
 
@@ -146,6 +154,33 @@
       @include font(14, 16);
       margin: 0;
       color: $white;
+    }
+  }
+
+  @media (max-width: 950px) and (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+  .footer__list {
+    flex-direction: column;
+
+    li:last-child {
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 767px) and (min-width: 500px) {
+      flex-direction: row;
+    }
+  }
+
+  .footer__item {
+    align-self: flex-start;
+    padding-bottom: 30px;
+
+    @media (max-width: 767px) and (min-width: 500px) {
+      width: 50%;
     }
   }
 }
