@@ -1,0 +1,79 @@
+.resume {
+  padding: 50px 0;
+}
+
+.resume__title {
+  @include font(80, 90);
+  @include open-sans-r;
+  margin: 0;
+  padding-bottom: 35px;
+  text-transform: uppercase;
+  color: $darker-gray;
+}
+
+.resume__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume__list {
+  @include list-reset;
+  width: 80%;
+  margin-right: 5%;
+}
+
+.resume__item {
+  display: flex;
+  width: 100%;
+  padding: 35px 0;
+  border-top: 1px solid $darker-gray;
+}
+
+.resume__item-title {
+  @include font(18, 20);
+  @include open-sans-r;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 25px 0 0;
+
+
+  text-align: center;
+  color: $white;
+  background-color: $light-red;
+  border-radius: 50%;
+}
+
+.resume__item-text-block {
+  width: 75%;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.resume__item-description {
+  @include font(14, 16);
+  color: $darker-gray;
+
+  a {
+    color: $light-red;
+  }
+}
+
+.resume__item-section-date {
+  @include font(14, 16);
+  color: $darker-gray;
+}
+
+.resume__item-section-title {
+  @include font(16, 18);
+  margin: 0;
+  color: $darker-gray;
+}
+
+.resume__side-panel {
+  width: 350px;
+}
