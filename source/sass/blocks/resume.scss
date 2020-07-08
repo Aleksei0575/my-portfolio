@@ -75,5 +75,107 @@
 }
 
 .resume__side-panel {
-  width: 350px;
+  width: 38%;
+}
+
+@media (max-width: $desktop-min-width - 1) {
+  .resume {
+    padding: 30px 0;
+  }
+
+  .resume__title {
+    @include font(60, 70);
+    padding-bottom: 28px;
+  }
+
+  .resume__list {
+    li:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .resume__item-title {
+    @include font(14, 16);
+    width: 100px;
+    height: 100px;
+    margin: 0 15px 0 0;
+  }
+
+  .resume__item-description {
+    @include font(12, 14);
+  }
+
+  .resume__item-section-title {
+    @include font(14, 16);
+  }
+
+  .resume__side-panel {
+    width: 31%;
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+  .resume__title {
+    @media (max-width: 599px) and (min-width: 280px) {
+      @include font(45, 50);
+      padding-bottom: 15px;
+    }
+  }
+
+  .resume__list {
+    @media (max-width: 599px) and (min-width: 280px) {
+      margin: 0;
+    }
+
+    li:last-child {
+      padding-bottom: 35px;
+    }
+  }
+
+  .resume__wrapper {
+    flex-direction: column;
+
+    @media (max-width: 767px) and (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
+  .resume__list {
+    width: 100%;
+
+    @media (max-width: 767px) and (min-width: 600px) {
+      width: 80%;
+    }
+  }
+
+  .resume__item {
+    flex-direction: column;
+
+    @media (max-width: 767px) and (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
+  .resume__item-title {
+    @media (max-width: 599px) and (min-width: 280px) {
+      @include font(20, 22);
+      width: 150px;
+      height: 150px;
+      margin: 0 0 30px 0;
+    }
+  }
+
+  .resume__item-text-block {
+    width: 100%;
+
+    @media (max-width: 767px) and (min-width: 600px) {
+      width: 75%;
+    }
+  }
+
+  .resume__side-panel {
+    @media (max-width: 599px) and (min-width: 280px) {
+      width: 100%;
+    }
+  }
 }
