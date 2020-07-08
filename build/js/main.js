@@ -1181,52 +1181,53 @@
 //   }
 // })();
 //
-// // слайдер "О фонде - команда фонда"
-// (function () {
-//
-//   var teamSliderContainer = document.querySelector('.fund-team__container');
-//   var teamPrevButton = document.querySelector('.fund-team__btn--next');
-//   var teamNextButton = document.querySelector('.fund-team__btn--prev');
-//   var teamScrollbar = document.querySelector('.fund-team__scrollbar');
-//
-//   if (teamSliderContainer) {
-//
-//     var teamSlider = new Swiper (teamSliderContainer, {
-//       slidesPerView: 1,
-//       spaceBetween: 10,
-//       loop: false,
-//       direction: 'horizontal',
-//
-//       navigation: {
-//         nextEl: teamPrevButton,
-//         prevEl: teamNextButton,
-//       },
-//
-//       scrollbar: {
-//         el: teamScrollbar,
-//         draggable: true,
-//       },
-//
-//       breakpoints: {
-//         1024: {
-//           slidesPerView: 3,
-//           spaceBetween: 25,
-//         },
-//
-//         680: {
-//           slidesPerView: 3,
-//           spaceBetween: 20,
-//         },
-//
-//         500: {
-//           slidesPerView: 2,
-//           spaceBetween: 25,
-//         },
-//       }
-//     });
-//   }
-// })();
-//
+// слайдеры "Проект 1"
+(function () {
+
+  var sliderContainer = document.querySelectorAll('.projects__slider-container');
+  var prevButton = document.querySelectorAll('.projects__slider-btn--prev');
+  var nextButton = document.querySelectorAll('.projects__slider-btn--next');
+  // var teamScrollbar = document.querySelector('.fund-team__scrollbar');
+
+  if (sliderContainer) {
+    for (var i = 0; i < sliderContainer.length; i++) {
+      var projectSlider = new Swiper (sliderContainer[i], {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        loop: false,
+        direction: 'horizontal',
+
+        navigation: {
+          nextEl: nextButton[i],
+          prevEl: prevButton[i],
+        },
+
+        // scrollbar: {
+        //   el: teamScrollbar,
+        //   draggable: true,
+        // },
+
+        breakpoints: {
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+
+          680: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+        }
+      });
+    }
+  }
+})();
+
 // // слайдер партнеров
 // (function () {
 //
