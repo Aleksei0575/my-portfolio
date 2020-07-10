@@ -179,7 +179,7 @@
     text-decoration: none;
 
     a {
-      @include open-sans-b;
+      @include open-sans-r;
 
       &:hover,
       &:focus {
@@ -220,6 +220,117 @@
     &:focus {
       @include hover;
       background-color: $light-red;
+    }
+  }
+}
+
+@media (max-width: $desktop-min-width - 1) {
+  .projects__title {
+    @include font(60, 70);
+    padding-bottom: 28px;
+  }
+
+  .projects__item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects__slider {
+    width: 80%;
+    flex: 1 1;
+  }
+
+  .projects__slider-item {
+    margin-left: 0;
+    margin-right: 20px !important;
+    text-align: center;
+  }
+
+  @media (max-width: 1023px) and (min-width: 940px) {
+    .projects__item {
+      flex-direction: row;
+    }
+
+    .projects__slider {
+      width: 60%;
+      flex: 1 1;
+      margin-right: 2%;
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 940px) {
+    .projects__item {
+      flex-direction: row;
+    }
+
+    .projects__slider-item {
+      margin-left: 0;
+      margin-right: 20px !important;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 939px) and (min-width: 870px) {
+    .projects__item {
+      flex-direction: row;
+    }
+
+    .projects__slider {
+      width: 65%;
+      flex: 1 1;
+      margin-right: 2%;
+    }
+  }
+
+  @media (max-width: 939px) and (min-width: 870px) {
+    .projects__item {
+      flex-direction: row;
+    }
+
+    .projects__slider-item {
+      margin-left: 0;
+      margin-right: 20px !important;
+      text-align: center;
+    }
+  }
+
+  .project__description {
+    width: 40%;
+  }
+
+  @media (max-width: 869px) and (min-width: 768px) {
+    .project__description {
+      width: 100%;
+      display: flex;
+      margin-top: 40px;
+    }
+  }
+
+  .project__description-title {
+    @include font(16, 18);
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (max-width: 869px) and (min-width: 768px) {
+    .project__description-title {
+      @include font(14, 16);
+      margin-right: 4%;
+    }
+  }
+
+  .project__description-block {
+
+    h3 {
+      @include font(14, 16);
+    }
+
+    p {
+      @include font(12, 14);
+    }
+
+    ul {
+      @include font(12, 14);
     }
   }
 }

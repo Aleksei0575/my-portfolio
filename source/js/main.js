@@ -1214,13 +1214,13 @@
           },
 
           680: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
 
           500: {
-            slidesPerView: 2,
-            spaceBetween: 25,
+            slidesPerView: 1,
+            spaceBetween: 50,
           },
         }
       });
