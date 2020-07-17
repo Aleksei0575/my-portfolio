@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="source/components/head.html"></include>
+  <body>
+    <include src="source/components/header.html"></include>
+    <main>
+      <section class="contacts">
+        <div class="contacts__container container">
+          <h1 class="contacts__title">Пишите</h1>
+          <div class="contacts__social">
+            <ul class="contacts__social-list">
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой контакт в telegram</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой контакт в skype</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой профиль на github</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой профиль в html-academy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__form">
+            <form action="#" method="post" class="contacts__form-submit form-submit">
+              <div class="form-submit__item form-submit__item-name">
+                <label class="visually-hidden" for="name">Имя</label>
+                <input id="name" type="text" name="your-name" placeholder="Имя" required>
+              </div>
+              <div class="form-submit__item form-submit__item-email">
+                <label class="visually-hidden" for="email">Имя</label>
+                <input id="email" type="email" name="your-email" placeholder="Ваш email" required>
+              </div>
+              <div class="form-submit__item form-submit__item-tel">
+                <label class="visually-hidden" for="tel">Телефон</label>
+                <input id="tel" type="tel" name="your-tel" placeholder="Телефон" required>
+              </div>
+              <div class="form-submit__item form-submit__item-text">
+                <label class="visually-hidden" for="message">Ваш вопрос</label>
+                <textarea id="message" name="your-message" placeholder="Добавьте сообщение..." required></textarea>
+              </div>
+              <span id="tooltip"></span>
+              <button type="submit" onclick="tooltip()">Отправить</button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <include src="source/components/footer.html"></include>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <title>Портфолио frontend junior-разработчик</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Портфолио Алексей Чудновец frontend junior-разработчик">
+
+  <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="header__wrapper container">
+    <div class="header__logo">
+      <h1 class="header__title">Алексей Чудновец</h1>
+      <p class="header__description">junior frontend-разработчик</p>
+    </div>
+
+    <div class="header__container-nav">
+      <button class="header__open" type="button">Открыть</button>
+      <nav class="header__nav header__nav-button">
+        <ul class="header__list">
+          <li><a href="main.html">Главная</a></li>
+          <li><a href="resume-page.html">Резюме</a></li>
+          <li><a href="projects.html">Проекты</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+    <main>
+      <section class="contacts">
+        <div class="contacts__container container">
+          <h1 class="contacts__title">Пишите</h1>
+          <div class="contacts__social">
+            <ul class="contacts__social-list">
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой контакт в telegram</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой контакт в skype</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой профиль на github</a>
+              </li>
+              <li class="contacts__social-item">
+                <a href="https://t.me/Aleksei_Chudnovets" class="contacts__social-link">Мой профиль в html-academy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__form">
+            <form action="#" method="post" class="contacts__form-submit form-submit">
+              <div class="form-submit__item form-submit__item-name">
+                <label class="visually-hidden" for="name">Имя</label>
+                <input id="name" type="text" name="your-name" placeholder="Имя" required="">
+              </div>
+              <div class="form-submit__item form-submit__item-email">
+                <label class="visually-hidden" for="email">Имя</label>
+                <input id="email" type="email" name="your-email" placeholder="Ваш email" required="">
+              </div>
+              <div class="form-submit__item form-submit__item-tel">
+                <label class="visually-hidden" for="tel">Телефон</label>
+                <input id="tel" type="tel" name="your-tel" placeholder="Телефон" required="">
+              </div>
+              <div class="form-submit__item form-submit__item-text">
+                <label class="visually-hidden" for="message">Ваш вопрос</label>
+                <textarea id="message" name="your-message" placeholder="Добавьте сообщение..." required=""></textarea>
+              </div>
+              <span id="tooltip"></span>
+              <button type="submit" onclick="tooltip()">Отправить</button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <footer class="footer">
+  <div class="footer__wrapper container">
+    <ul class="footer__list">
+      <li class="footer__item footer__item--phone">
+        <span>
+          <svg width="32" height="32">
+            <use xlink:href="img/sprite.svg#icon-phone"></use>
+          </svg>
+        </span>
+        <p>Звоните</p>
+        <a href="tel:+380509348876">+38 (050) 934-88-76</a>
+      </li>
+
+      <li class="footer__item footer__item--mail">
+        <span>
+          <svg width="32" height="32">
+            <use xlink:href="img/sprite.svg#icon-mail"></use>
+          </svg>
+        </span>
+        <p>Пишите</p>
+        <a href="mailto:chudnovets0575@gmail.com">chudnovets0575@gmail.com</a>
+      </li>
+
+      <li class="footer__item footer__item--academy">
+        <a href="https://htmlacademy.ru/profile/id585147">
+          Заходите
+          <svg width="32" height="32">
+            <use xlink:href="img/sprite.svg#icon-academy"></use>
+          </svg>
+        </a>
+      </li>
+
+      <li class="footer__item footer__item--copyright">
+        <span>
+          <svg width="32" height="32">
+            <use xlink:href="img/sprite.svg#icon-copyright"></use>
+          </svg>
+        </span>
+        <p>&copy; 2020 Алексей Чудновец</p>
+        <p>Все права защищены</p>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
