@@ -1,0 +1,125 @@
+.form-submit {
+  width: 100%;
+
+  button {
+    display: block;
+    margin-left: auto;
+    padding: 12px 35px;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $light-red;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      @include hover;
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: $light-olive;
+    }
+  }
+}
+
+.form-submit__item {
+  box-sizing: border-box;
+
+  input {
+    width: 100%;
+    margin-bottom: 7px;
+    padding: 10px 5px;
+
+    background-color: $light-red;
+    border: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: $light-olive;
+
+      @include hover;
+    }
+
+    &::placeholder {
+      color: $white;
+      text-transform: uppercase;
+
+      @include font (14, 16);
+    }
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 5px 50px;
+
+    background-color: $light-red;
+    border: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: $light-olive;
+
+      @include hover;
+    }
+
+    &::placeholder {
+      color: $white;
+      text-transform: uppercase;
+
+      @include font (14, 16);
+    }
+  }
+}
+
+.form-submit__item {
+
+  input {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+
+    background-color: $light-red;
+    border: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: $light-olive;
+
+      @include hover;
+    }
+
+    &::placeholder {
+      color: $white;
+      text-transform: uppercase;
+
+      @include font (14, 16);
+    }
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 5px 50px;
+
+    background-color: $light-red;
+    border: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: $light-olive;
+
+      @include hover;
+    }
+
+    &::placeholder {
+      color: $white;
+      text-transform: uppercase;
+
+      @include font (14, 16);
+    }
+  }
+}
