@@ -46,7 +46,7 @@
 
           <div class="contacts__form">
             <p>Я обязательно отвечу в самое ближайшее время</p>
-            <form action="#" method="post" class="contacts__form-submit form-submit">
+            <form action="chudnovets0575@gmail.com" method="get" class="contacts__form-submit form-submit">
               <div class="form-submit__item form-submit__item-name">
                 <label class="visually-hidden" for="name">Имя</label>
                 <input id="name" type="text" name="your-name" placeholder="Имя" required>
@@ -57,14 +57,17 @@
               </div>
               <div class="form-submit__item form-submit__item-tel">
                 <label class="visually-hidden" for="tel">Телефон</label>
-                <input id="tel" type="tel" name="your-tel" placeholder="Телефон" required>
+                <input id="tel" type="tel" name="your-tel" placeholder="Ваш телефон" required>
               </div>
               <div class="form-submit__item form-submit__item-text">
                 <label class="visually-hidden" for="message">Ваш вопрос</label>
-                <textarea id="message" name="your-message" placeholder="Добавьте сообщение..." required></textarea>
+                <textarea id="message" name="your-message" placeholder="Добавьте сообщение..." minlength="30" maxlength="150" required></textarea>
               </div>
-              <span id="tooltip"></span>
-              <button type="submit" onclick="tooltip()">Отправить</button>
+              <div class="form-submit__user-control">
+                <span class="form-submit__error" id="error"></span>
+                <button type="submit">Отправить</button>
+              </div>
+
             </form>
           </div>
         </div>
