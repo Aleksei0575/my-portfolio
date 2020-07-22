@@ -10,263 +10,298 @@
 //   });
 // })();
 //
-// // маска на телефон в анкете волонтера
+
+// маска на телефон
+(function () {
+  var phone = document.querySelector('.form-submit input[type="tel"]');
+  if (phone) {
+    window.iMaskJS(phone, {mask: '+{38}(000)-000-00-00'});
+  }
+})();
+
+// Маска номера телефона
 // (function () {
-//   var phone = document.querySelector('.volunteering-form__form input[type="tel"]');
-//   if (phone) {
-//     window.iMaskJS(phone, {mask: '+{7}(000)000-00-00'});
-//   }
-// })();
+//   var telInputs = Array.prototype.slice.call(document.querySelectorAll('.form-submit input[type="tel"]'));
+//   var maskOptions = {
+//     mask: '+{38}(000)000-00-00'
+//   };
 //
-// // выбор даты(общая)
+//   telInputs.forEach(function (it) {
+//     if (it) {
+//       // eslint-disable-next-line no-new,no-undef
+//       new IMask(it, maskOptions);
+//     }
+//   });
+// })();
+
+// валидация (общая)
+(function () {
+    // var MAX_LENGTH = 16;
+    // var MAX_DONATE_FORM_LENGTH = 11;
+  var form = document.querySelector('.form-submit');
+  var name = document.getElementById('name');
+  var email = document.getElementById('email');
+  var phone = document.getElementById('tel');
+  var message = document.getElementById('message');
+  var error = document.querySelector('.form-submit__error');
+  var submitButton = document.querySelector('button');
+
+  name.addEventListener('input', function (event) {
+    if (name.validity.valid) {
+      name.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+      error.innerHTML = "";
+    } else {
+      name.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+      error.innerHTML = 'Введите корректно имя';
+    }
+  }, false);
+
+  email.addEventListener('input', function (event) {
+    if (email.validity.valid) {
+      email.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+      error.innerHTML = "";
+    } else {
+      email.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+      error.innerHTML = 'Введите корректный email';
+    }
+  }, false);
+
+  phone.addEventListener('input', function (event) {
+    if (phone.validity.valid) {
+      phone.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+      error.innerHTML = "";
+    } else {
+      phone.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+      error.innerHTML = 'Введите правильно номер телефона';
+    }
+  }, false);
+
+  message.addEventListener('input', function (event) {
+    if (message.validity.valid) {
+      message.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+      error.innerHTML = "";
+    } else {
+      message.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+      error.innerHTML = 'Введите сообщение более 30 символов';
+    }
+  }, false);
+
+  form.addEventListener('submit', function (event) {
+    if (!name.validity.valid || !email.validity.valid || !phone.validity.valid || !message.validity.valid) {
+      error.innerHTML = 'Форма заполнена некорректно, проверьте';
+      event.preventDefault();
+    } else {
+      error.style = 'color: green;'
+      error.innerHTML = 'Форма отправлена успешно!';
+    }
+  }, false);
+
+})();
+
+
 // (function () {
-//   function populate(date) {
-//     var month = date.querySelector('select[name="b-month"]');
-//     var day = date.querySelector('select[name="b-day"]');
-//     var days = day.querySelectorAll('option');
-//     var year = date.querySelector('select[name="b-year"]');
-//
-//     var dayTwentyNinth = day.querySelector('option[value="29"]');
-//     var dayThirtieth = day.querySelector('option[value="30"]');
-//     var dayThirtyFirst = day.querySelector('option[value="31"]');
-//
-//
-//     Array.prototype.forEach.call(days, function (element) {
-//       element.removeAttribute('style');
-//     });
-//
-//     var leapYear = Number(year.value) % 4;
-//
-//     if (month.value === 'Апрель' || month.value === 'Сентябрь' || month.value === 'Июнь' || month.value === 'Ноябрь') {
-//       dayThirtyFirst.style.display = 'none';
-//     }
-//
-//     if (!(leapYear === 0) && month.value === 'Февраль') {
-//       dayThirtyFirst.style.display = 'none';
-//       dayThirtieth.style.display = 'none';
-//       dayTwentyNinth.style.display = 'none';
-//     }
-//
-//     if (leapYear === 0 && month.value === 'Февраль') {
-//       dayThirtyFirst.style.display = 'none';
-//       dayThirtieth.style.display = 'none';
-//     }
-//   }
-//
-//   window.populate = populate;
+  //   function getPhoneError(phone, phoneLength) {
+  //     if (phone.length < phoneLength) {
+  //       return 'Укажите ваш телефон';
+  //     }
+  //
+  //     return '';
+  //   }
+  //
+  //   function getValidationEmail(form) {
+  //     var currentEmail = email;
+  //
+  //     if (currentEmail) {
+  //       if (!currentEmail.validity.valid) {
+  //         currentEmail.style = 'box-shadow: inset 0 0 0 2px red';
+  //         return 'Некорректный email';
+  //       } else {
+  //         return '';
+  //       }
+  //     }
+  //
+  //     return '';
+  //   }
+  //
+  //   function getValidationInputs(form) {
+  //     var currentInputs = name;
+  //     var error = '';
+  //
+  //     if (currentInputs) {
+  //       if (!currentInputs.validity.valid) {
+  //         element.style = 'box-shadow: inset 0 0 0 2px red';
+  //         error = 'Заполните поле';
+  //       }
+  //     }
+  //
+  //     return error;
+  //   }
+  //
+  //   function getValidationTextarea(form) {
+  //     var currentTextarea = message;
+  //     var error = '';
+  //
+  //     if (currentTextarea) {
+  //       if (!element.validity.valid) {
+  //         element.style = 'box-shadow: inset 0 0 0 2px red';
+  //         error = 'Заполните поле';
+  //       }
+  //     }
+  //
+  //     return error;
+  //   }
+  //
+  //   function getValidationPhone(form) {
+  //     var currentPhone = phone;
+  //
+  //     if (currentPhone) {
+  //
+  //       if(currentPhone.hasAttribute("name") || currentPhone.getAttribute("name")) {
+  //         var errorPhone = getPhoneError(currentPhone.value);
+  //       } else {
+  //         var errorPhone = getPhoneError(currentPhone.value);
+  //       }
+  //
+  //       if (errorPhone) {
+  //         currentPhone.style = 'box-shadow: inset 0 0 0 2px red';
+  //         return 'Телефон некорректен';
+  //       } else {
+  //         return '';
+  //       }
+  //     }
+  //
+  //     return '';
+  //   }
+  //
+  // // function getValidationRadio(currentForm) {
+  // //   var currentRadios = currentForm.querySelectorAll('input[type="radio"]');
+  // //   var error = '';
+  // //
+  // //   if (currentRadios) {
+  // //     Array.prototype.forEach.call(currentRadios, function (element) {
+  // //       if (!element.validity.valid) {
+  // //         element.nextElementSibling.style = 'border: 1px solid red';
+  // //         error = 'Поставьте флажок';
+  // //       }
+  // //     });
+  // //   }
+  // //
+  // //   return error;
+  // // }
+  //
+  // // function getValidationCheckbox(currentForm) {
+  // //   var currentCheckboxes = currentForm.querySelectorAll('input[type="checkbox"]');
+  // //   var error = '';
+  // //   if (currentCheckboxes) {
+  // //     Array.prototype.forEach.call(currentCheckboxes, function (element) {
+  // //       if (!element.validity.valid) {
+  // //         element.nextElementSibling.style = 'border: 1px solid red';
+  // //         error = 'Поставьте флажок';
+  // //       }
+  // //     });
+  // //   }
+  // //
+  // //   return error;
+  // // }
+  //
+  // // function getValidationCheckboxGroups(currentForm) {
+  // //   var checkboxGroups = currentForm.querySelectorAll('.checkbox-group');
+  // //   var error = 0;
+  // //
+  // //   if (checkboxGroups) {
+  // //     Array.prototype.forEach.call(checkboxGroups, function (element) {
+  // //       var checkboxes = element.querySelectorAll('input[type="checkbox"]');
+  // //       var localError = 0;
+  // //       for (var i = 0; i < checkboxes.length; i++) {
+  // //         if (checkboxes[i].checked) {
+  // //           localError = 0;
+  // //           break;
+  // //         } else {
+  // //           localError = 1;
+  // //         }
+  // //       }
+  // //
+  // //       if (localError) {
+  // //         Array.prototype.forEach.call(checkboxes, function (el) {
+  // //           el.nextElementSibling.style = 'border: 1px solid red';
+  // //         });
+  // //       }
+  // //
+  // //       error += localError;
+  // //     });
+  // //   }
+  // //
+  // //   return error;
+  // // }
+  //
+  // // function getValidationNumber(currentForm) {
+  // //   var currentNumbers = currentForm.querySelectorAll('input[type="number"]');
+  // //   var error = '';
+  // //   if (currentNumbers) {
+  // //     Array.prototype.forEach.call(currentNumbers, function (element) {
+  // //       if (!element.validity.valid) {
+  // //         element.style = 'box-shadow: inset 0 0 0 2px red';
+  // //         error = 'Заполните поле';
+  // //       }
+  // //     });
+  // //   }
+  // //
+  // //   return error;
+  // // }
+  //
+  // // function getValidationFiles(currentForm) {
+  // //   var currentFile = currentForm.querySelector('input[type="file"]');
+  // //
+  // //   if (currentFile) {
+  // //     var customFile = currentForm.querySelector(('input[type="file"] ~ label'));
+  // //     if (!currentFile.validity.valid) {
+  // //       customFile.style = 'box-shadow: inset 0 0 0 2px red';
+  // //       return 'Не все поля заполнены';
+  // //     } else {
+  // //       return '';
+  // //     }
+  // //   }
+  // //   return '';
+  // // }
+  //
+  // function getResultValidation(evt, form) {
+  //   evt.preventDefault();
+  //   evt.stopPropagation();
+  //
+  //
+  //   getValidationInputs(form);
+  //   // getValidationRadio(currentForm);
+  //   getValidationEmail(form);
+  //   getValidationPhone(form);
+  //   // getValidationCheckbox(currentForm);
+  //   // getValidationCheckboxGroups(currentForm);
+  //   //getValidationNumber(currentForm);
+  //   // getValidationFiles(currentForm);
+  //   getValidationTextarea(form);
+  //
+  //
+  //   if (getValidationInputs(form) || getValidationEmail(form) || getValidationPhone(form) || getValidationTextarea(form)) {
+  //     return 'Не все поля заполненны корректно';
+  //   }
+  //
+  //   return '';
+  // }
+  //
+  // window.getResultValidation = getResultValidation;
 // })();
-//
-// // валидация (общая)
-// (function () {
-//   var MAX_LENGTH = 16;
-//   var MAX_DONATE_FORM_LENGTH = 11;
-//
-//   function getPhoneError(phone, phoneLength) {
-//     if (phone.length < phoneLength) {
-//       return 'Укажите ваш телефон';
-//     }
-//
-//     return '';
-//   }
-//
-//   function getValidationEmail(currentForm) {
-//     var currentEmail = currentForm.querySelector('input[type="email"]');
-//
-//     if (currentEmail) {
-//       if (!currentEmail.validity.valid) {
-//         currentEmail.style = 'box-shadow: inset 0 0 0 2px red';
-//         return 'Некорректный email';
-//       } else {
-//         return '';
-//       }
-//     }
-//
-//     return '';
-//   }
-//
-//   function getValidationInputs(currentForm) {
-//     var currentInputs = currentForm.querySelectorAll('input[type="text"]');
-//     var error;
-//
-//     if (currentInputs) {
-//       Array.prototype.forEach.call(currentInputs, function (element) {
-//         if (!element.validity.valid) {
-//           element.style = 'box-shadow: inset 0 0 0 2px red';
-//           error = 'Заполните поле';
-//         }
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationTextarea(currentForm) {
-//     var currentTextarea = currentForm.querySelectorAll('textarea');
-//     var error = '';
-//
-//     if (currentTextarea) {
-//       Array.prototype.forEach.call(currentTextarea, function (element) {
-//         if (!element.validity.valid) {
-//           element.style = 'box-shadow: inset 0 0 0 2px red';
-//           error = 'Заполните поле';
-//         }
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationPhone(currentForm) {
-//     var currentPhone = currentForm.querySelector('input[type="tel"]');
-//
-//     if (currentPhone) {
-//
-//       if(currentPhone.hasAttribute("name") || currentPhone.getAttribute("name") === "leyka_donor_phone") {
-//         var errorPhone = getPhoneError(currentPhone.value, MAX_DONATE_FORM_LENGTH);
-//       } else {
-//         var errorPhone = getPhoneError(currentPhone.value, MAX_LENGTH);
-//       }
-//
-//       if (errorPhone) {
-//         currentPhone.style = 'box-shadow: inset 0 0 0 2px red';
-//         return 'Телефон некорректен';
-//       } else {
-//         return '';
-//       }
-//     }
-//
-//     return '';
-//   }
-//
-//   function getValidationRadio(currentForm) {
-//     var currentRadios = currentForm.querySelectorAll('input[type="radio"]');
-//     var error = '';
-//
-//     if (currentRadios) {
-//       Array.prototype.forEach.call(currentRadios, function (element) {
-//         if (!element.validity.valid) {
-//           element.nextElementSibling.style = 'border: 1px solid red';
-//           error = 'Поставьте флажок';
-//         }
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationCheckbox(currentForm) {
-//     var currentCheckboxes = currentForm.querySelectorAll('input[type="checkbox"]');
-//     var error = '';
-//     if (currentCheckboxes) {
-//       Array.prototype.forEach.call(currentCheckboxes, function (element) {
-//         if (!element.validity.valid) {
-//           element.nextElementSibling.style = 'border: 1px solid red';
-//           error = 'Поставьте флажок';
-//         }
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationCheckboxGroups(currentForm) {
-//     var checkboxGroups = currentForm.querySelectorAll('.checkbox-group');
-//     var error = 0;
-//
-//     if (checkboxGroups) {
-//       Array.prototype.forEach.call(checkboxGroups, function (element) {
-//         var checkboxes = element.querySelectorAll('input[type="checkbox"]');
-//         var localError = 0;
-//         for (var i = 0; i < checkboxes.length; i++) {
-//           if (checkboxes[i].checked) {
-//             localError = 0;
-//             break;
-//           } else {
-//             localError = 1;
-//           }
-//         }
-//
-//         if (localError) {
-//           Array.prototype.forEach.call(checkboxes, function (el) {
-//             el.nextElementSibling.style = 'border: 1px solid red';
-//           });
-//         }
-//
-//         error += localError;
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationNumber(currentForm) {
-//     var currentNumbers = currentForm.querySelectorAll('input[type="number"]');
-//     var error = '';
-//     if (currentNumbers) {
-//       Array.prototype.forEach.call(currentNumbers, function (element) {
-//         if (!element.validity.valid) {
-//           element.style = 'box-shadow: inset 0 0 0 2px red';
-//           error = 'Заполните поле';
-//         }
-//       });
-//     }
-//
-//     return error;
-//   }
-//
-//   function getValidationFiles(currentForm) {
-//     var currentFile = currentForm.querySelector('input[type="file"]');
-//
-//     if (currentFile) {
-//       var customFile = currentForm.querySelector(('input[type="file"] ~ label'));
-//       if (!currentFile.validity.valid) {
-//         customFile.style = 'box-shadow: inset 0 0 0 2px red';
-//         return 'Не все поля заполнены';
-//       } else {
-//         return '';
-//       }
-//     }
-//     return '';
-//   }
-//
-//   function getResultValidation(evt, currentForm) {
-//     evt.preventDefault();
-//     evt.stopPropagation();
-//
-//
-//     getValidationInputs(currentForm);
-//     getValidationRadio(currentForm);
-//     getValidationEmail(currentForm);
-//     getValidationPhone(currentForm);
-//     getValidationCheckbox(currentForm);
-//     getValidationCheckboxGroups(currentForm);
-//     getValidationNumber(currentForm);
-//     getValidationFiles(currentForm);
-//     getValidationTextarea(currentForm);
-//
-//
-//     if (getValidationInputs(currentForm) || getValidationRadio(currentForm) || getValidationEmail(currentForm) || getValidationPhone(currentForm) || getValidationCheckbox(currentForm) || getValidationCheckboxGroups(currentForm) || getValidationNumber(currentForm) || getValidationFiles(currentForm) || getValidationTextarea(currentForm)) {
-//       return 'Не все поля заполненны корректно';
-//     }
-//
-//     return '';
-//   }
-//
-//   window.getResultValidation = getResultValidation;
-// })();
-//
-// // ресет формы(общая)
+
+// // // ресет формы(общая)
 // (function () {
 //
 //   function resetForm(currentForm) {
 //     currentForm.reset();
-//     var currentEmails = currentForm.querySelectorAll('input[type="email"]');
-//     var currentInputs = currentForm.querySelectorAll('input[type="text"]');
-//     var currentTextarea = currentForm.querySelectorAll('textarea');
-//     var currentPhones = currentForm.querySelectorAll('input[type="tel"]');
-//     var currentRadios = currentForm.querySelectorAll('input[type="radio"]');
-//     var currentCheckboxes = currentForm.querySelectorAll('input[type="checkbox"]');
-//     var currentNumbers = currentForm.querySelectorAll('input[type="number"]');
+//     var currentEmails = currentForm.querySelector('input[type="email"]');
+//     var currentInputs = currentForm.querySelector('input[type="text"]');
+//     var currentTextarea = currentForm.querySelector('textarea');
+//     var currentPhones = currentForm.querySelector('input[type="tel"]');
+//     // var currentRadios = currentForm.querySelectorAll('input[type="radio"]');
+//     // var currentCheckboxes = currentForm.querySelectorAll('input[type="checkbox"]');
+//     // var currentNumbers = currentForm.querySelectorAll('input[type="number"]');
 //
 //     if (currentEmails) {
 //       Array.prototype.forEach.call(currentEmails, function (element) {
@@ -292,26 +327,6 @@
 //       });
 //     }
 //
-//     if (currentRadios) {
-//       Array.prototype.forEach.call(currentCheckboxes, function (element) {
-//         element.nextElementSibling.removeAttribute('style');
-//       });
-//     }
-//
-//     if (currentCheckboxes) {
-//       Array.prototype.forEach.call(currentRadios, function (element) {
-//         element.nextElementSibling.removeAttribute('style');
-//       });
-//     }
-//
-//     if (currentNumbers) {
-//       Array.prototype.forEach.call(currentNumbers, function (element) {
-//         element.removeAttribute('style');
-//       });
-//     }
-//
-//     var currentFile = currentForm.querySelector('input[type="file"]');
-//
 //     if (currentFile) {
 //       var customFile = currentForm.querySelector('input[type="file"] ~ label');
 //       customFile.removeAttribute('style');
@@ -321,7 +336,7 @@
 //   window.resetForm = resetForm;
 //
 // })();
-//
+
 // // открытия модального окна после заполнения формы (общая)
 // (function () {
 //   var ESC_CODE = 27;

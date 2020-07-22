@@ -2,7 +2,7 @@
   width: 100%;
 
   button {
-    display: block;
+    display: inline-block;
     margin-left: auto;
     padding: 12px 35px;
 
@@ -18,6 +18,10 @@
       box-shadow: inset 0 0 0 2px $green-hover;
       background-color: $light-olive;
     }
+
+    @media (max-width: $tablet-width - 1) {
+      @include font (10, 12);
+    }
   }
 }
 
@@ -31,6 +35,9 @@
 
     background-color: $light-red;
     border: none;
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
 
     &:hover,
     &:focus {
@@ -45,6 +52,16 @@
       text-transform: uppercase;
 
       @include font (14, 16);
+    }
+
+    &:invalid {
+      box-shadow: inset 0 0 0 4px red;
+      background-color: dodgerblue;
+    }
+
+    &:valid {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: greenyellow;
     }
   }
 
@@ -55,6 +72,9 @@
 
     background-color: $light-red;
     border: none;
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
 
     &:hover,
     &:focus {
@@ -69,57 +89,32 @@
       text-transform: uppercase;
 
       @include font (14, 16);
+    }
+
+    &:invalid {
+      box-shadow: inset 0 0 0 4px red;
+      background-color: dodgerblue;
+    }
+
+    &:valid {
+      box-shadow: inset 0 0 0 2px $green-hover;
+      background-color: greenyellow;
     }
   }
 }
 
-.form-submit__item {
+.form-submit__user-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  input {
-    width: 100%;
-    margin-bottom: 5px;
-    padding: 10px 5px;
+.form-submit__error {
+  @include font (12, 14);
+  display: inline-block;
+  color: red;
 
-    background-color: $light-red;
-    border: none;
-
-    &:hover,
-    &:focus {
-      box-shadow: inset 0 0 0 2px $green-hover;
-      background-color: $light-olive;
-
-      @include hover;
-    }
-
-    &::placeholder {
-      color: $white;
-      text-transform: uppercase;
-
-      @include font (14, 16);
-    }
-  }
-
-  textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px 5px 50px;
-
-    background-color: $light-red;
-    border: none;
-
-    &:hover,
-    &:focus {
-      box-shadow: inset 0 0 0 2px $green-hover;
-      background-color: $light-olive;
-
-      @include hover;
-    }
-
-    &::placeholder {
-      color: $white;
-      text-transform: uppercase;
-
-      @include font (14, 16);
-    }
+  @media (max-width: $tablet-width - 1) {
+    @include font (10, 12);
   }
 }
