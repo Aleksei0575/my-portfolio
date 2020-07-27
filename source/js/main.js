@@ -1,38 +1,82 @@
 'use strict';
 
-// // ПЕРЕИСПОЛЬЗУЕМЫЕ ФУНКЦИИ
-// // маска на телефон на странице Заявка на помощь
-// (function () {
-//   var phones = document.querySelectorAll('.request__form input[type="tel"]');
-//
-//   Array.prototype.forEach.call(phones, function (element) {
-//     window.iMaskJS(element, {mask: '+{7}(000)000-00-00'});
-//   });
-// })();
-//
+// меню
+(function () {
+  var navBtn = document.querySelector('.header__open');
+  var nav = document.querySelector('.header__nav');
+
+  if (navBtn && nav) {
+    navBtn.addEventListener('click', openNav);
+  }
+
+  function openNav(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    if (navBtn.classList.contains('header__close')) {
+      navBtn.classList.remove('header__close');
+      nav.style.display = '';
+    } else {
+      navBtn.classList.add('header__close');
+      nav.style.display = 'block';
+    }
+  }
+})();
 
 // маска на телефон
 (function () {
   var phone = document.querySelector('.form-submit input[type="tel"]');
   if (phone) {
-    window.iMaskJS(phone, {mask: '+{38}(000)-000-00-00'});
+    window.iMaskJS(phone, {mask: '+{38} (000)-000-00-00'});
   }
 })();
 
-// Маска номера телефона
-// (function () {
-//   var telInputs = Array.prototype.slice.call(document.querySelectorAll('.form-submit input[type="tel"]'));
-//   var maskOptions = {
-//     mask: '+{38}(000)000-00-00'
-//   };
-//
-//   telInputs.forEach(function (it) {
-//     if (it) {
-//       // eslint-disable-next-line no-new,no-undef
-//       new IMask(it, maskOptions);
-//     }
-//   });
-// })();
+// слайдеры "Проекты"
+(function () {
+
+  var sliderContainer = document.querySelectorAll('.projects__slider-container');
+  var prevButton = document.querySelectorAll('.projects__slider-btn--prev');
+  var nextButton = document.querySelectorAll('.projects__slider-btn--next');
+  // var teamScrollbar = document.querySelector('.fund-team__scrollbar');
+
+  if (sliderContainer) {
+    for (var i = 0; i < sliderContainer.length; i++) {
+      var projectSlider = new Swiper (sliderContainer[i], {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        loop: false,
+        direction: 'horizontal',
+
+        navigation: {
+          nextEl: nextButton[i],
+          prevEl: prevButton[i],
+        },
+
+        // scrollbar: {
+        //   el: teamScrollbar,
+        //   draggable: true,
+        // },
+
+        breakpoints: {
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+
+          680: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+
+          500: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+          },
+        }
+      });
+    }
+  }
+})();
 
 // валидация (общая)
 (function () {
@@ -46,7 +90,7 @@
   var error = document.querySelector('.form-submit__error');
   var submitButton = document.querySelector('button');
 
-  name.addEventListener('input', function (event) {
+  name.addEventListener('input', function () {
     if (name.validity.valid) {
       name.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
       error.innerHTML = "";
@@ -56,7 +100,7 @@
     }
   }, false);
 
-  email.addEventListener('input', function (event) {
+  email.addEventListener('input', function () {
     if (email.validity.valid) {
       email.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
       error.innerHTML = "";
@@ -66,7 +110,7 @@
     }
   }, false);
 
-  phone.addEventListener('input', function (event) {
+  phone.addEventListener('input', function () {
     if (phone.validity.valid) {
       phone.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
       error.innerHTML = "";
@@ -76,13 +120,13 @@
     }
   }, false);
 
-  message.addEventListener('input', function (event) {
+  message.addEventListener('input', function () {
     if (message.validity.valid) {
       message.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
       error.innerHTML = "";
     } else {
       message.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
-      error.innerHTML = 'Введите сообщение более 30 символов';
+      error.innerHTML = 'Введите сообщение более 9 символов';
     }
   }, false);
 
@@ -94,10 +138,10 @@
       error.style = 'color: green;'
       error.innerHTML = 'Форма отправлена успешно!';
     }
+    this.setInterval(1000).reset(); // ресет формы
   }, false);
 
 })();
-
 
 // (function () {
   //   function getPhoneError(phone, phoneLength) {
@@ -1196,52 +1240,6 @@
 //   }
 // })();
 //
-// слайдеры "Проект 1"
-(function () {
-
-  var sliderContainer = document.querySelectorAll('.projects__slider-container');
-  var prevButton = document.querySelectorAll('.projects__slider-btn--prev');
-  var nextButton = document.querySelectorAll('.projects__slider-btn--next');
-  // var teamScrollbar = document.querySelector('.fund-team__scrollbar');
-
-  if (sliderContainer) {
-    for (var i = 0; i < sliderContainer.length; i++) {
-      var projectSlider = new Swiper (sliderContainer[i], {
-        slidesPerView: 1,
-        spaceBetween: 25,
-        loop: false,
-        direction: 'horizontal',
-
-        navigation: {
-          nextEl: nextButton[i],
-          prevEl: prevButton[i],
-        },
-
-        // scrollbar: {
-        //   el: teamScrollbar,
-        //   draggable: true,
-        // },
-
-        breakpoints: {
-          1024: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-
-          680: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-
-          500: {
-            slidesPerView: 1,
-            spaceBetween: 50,
-          },
-        }
-      });
-    }
-  }
-})();
 
 // // слайдер партнеров
 // (function () {
@@ -1610,28 +1608,6 @@
 // })();
 
 // БЛОКИ
-// меню
-(function () {
-  var navBtn = document.querySelector('.header__open');
-  var nav = document.querySelector('.header__nav');
-
-  if (navBtn && nav) {
-    navBtn.addEventListener('click', openNav);
-  }
-
-  function openNav(evt) {
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    if (navBtn.classList.contains('header__close')) {
-      navBtn.classList.remove('header__close');
-      nav.style.display = '';
-    } else {
-      navBtn.classList.add('header__close');
-      nav.style.display = 'block';
-    }
-  }
-})();
 
 // поиск
 // (function () {

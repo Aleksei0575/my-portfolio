@@ -1271,6 +1271,9 @@ input:invalid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
   color: #4d4d4d; }
   .contacts__social-link svg {
