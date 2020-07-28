@@ -1,6 +1,5 @@
 'use strict';
 
-// маска на телефон
 // меню
 (function () {
   var navBtn = document.querySelector('.header__open');
@@ -24,6 +23,7 @@
   }
 })();
 
+// маска на телефон
 (function () {
   var phone = document.querySelector('.form-submit input[type="tel"]');
   if (phone) {
@@ -90,57 +90,66 @@
   var error = document.querySelector('.form-submit__error');
   var submitButton = document.querySelector('button');
 
-  name.addEventListener('input', function () {
-    if (name.validity.valid) {
-      name.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
-      error.innerHTML = "";
-    } else {
-      name.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
-      error.innerHTML = 'Введите корректно имя';
-    }
-  }, false);
+  if (name) {
+    name.addEventListener('input', function () {
+      if (name.validity.valid) {
+        name.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+        error.innerHTML = "";
+      } else {
+        name.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+        error.innerHTML = 'Введите корректно имя';
+      }
+    }, false);
+  }
 
-  email.addEventListener('input', function () {
-    if (email.validity.valid) {
-      email.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
-      error.innerHTML = "";
-    } else {
-      email.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
-      error.innerHTML = 'Введите корректный email';
-    }
-  }, false);
+  if (email) {
+    email.addEventListener('input', function () {
+      if (email.validity.valid) {
+        email.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+        error.innerHTML = "";
+      } else {
+        email.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+        error.innerHTML = 'Введите корректный email';
+      }
+    }, false);
+  }
 
-  phone.addEventListener('input', function () {
-    if (phone.validity.valid) {
-      phone.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
-      error.innerHTML = "";
-    } else {
-      phone.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
-      error.innerHTML = 'Введите правильно номер телефона';
-    }
-  }, false);
+  if (phone) {
+    phone.addEventListener('input', function () {
+      if (phone.validity.valid) {
+        phone.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+        error.innerHTML = "";
+      } else {
+        phone.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+        error.innerHTML = 'Введите правильно номер телефона';
+      }
+    }, false);
+  }
 
-  message.addEventListener('input', function () {
-    if (message.validity.valid) {
-      message.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
-      error.innerHTML = "";
-    } else {
-      message.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
-      error.innerHTML = 'Введите сообщение более 9 символов';
-    }
-  }, false);
+  if (message) {
+    message.addEventListener('input', function () {
+      if (message.validity.valid) {
+        message.style = 'box-shadow: inset 0 0 0 2px #09b48e; background-color: greenyellow;';
+        error.innerHTML = "";
+      } else {
+        message.style = 'color: red; box-shadow: inset 0 0 0 4px red; background-color: dodgerblue;';
+        error.innerHTML = 'Введите сообщение более 9 символов';
+      }
+    }, false);
+  }
 
-  form.addEventListener('submit', function (event) {
-    if (!name.validity.valid || !email.validity.valid || !phone.validity.valid || !message.validity.valid) {
-      error.innerHTML = 'Форма заполнена некорректно, проверьте';
-      event.preventDefault();
-    } else {
-      error.style = 'color: green;'
-      error.innerHTML = 'Форма отправлена успешно!';
-    }
-    this.setInterval(1000).reset(); // ресет формы
-  }, false);
-
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      if (!name.validity.valid || !email.validity.valid || !phone.validity.valid || !message.validity.valid) {
+        error.innerHTML = 'Форма заполнена некорректно, проверьте';
+        event.preventDefault();
+      } else {
+        error.style = 'color: green;'
+        error.innerHTML = 'Форма отправлена успешно!';
+      }
+      this.reset(); // ресет формы
+    }, false);
+  }
 })();
 
 // (function () {
