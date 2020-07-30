@@ -108,7 +108,7 @@
 
     svg {
       @include pseudo-elem;
-      top: 3px;
+      top: 0;
       left: 0;
       fill: $white;
     }
@@ -140,7 +140,7 @@
 
     span {
       @include pseudo-elem;
-      top: 3px;
+      //top: 3px;
       left: 0;
     }
 
