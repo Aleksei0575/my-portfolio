@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
+<include src="source/components/head.html"></include>
   <body>
+    <include src="source/components/header.html"></include>
     <main>
-      <div class="container">
-        <h1>Список страниц</h1>
-        <ul>
-          <li>
-            <a href="main.html">Главная</a>
-          </li>
-          <li>
-            <a href="resume-page.html">Резюме</a>
-          </li>
-          <li>
-            <a href="projects.html">Проекты</a>
-          </li>
-          <li>
-            <a href="contacts.html">Контакты</a>
-          </li>
-        </ul>
-      </div>
+      <section class="about-me">
+        <h1 class="visually-hidden">Немного информации обо мне</h1>
+        <div class="about-me__container container">
+
+          <div class="about-me__img">
+            <img src="img/main/portfolio-img.jpg" width="269" height="268" alt="Моя фотография">
+          </div>
+
+          <div class="about-me__info-wrapper">
+            <div class="about-me__greeting">
+              <h2 class="about-me__greeting-title">Привет,</h2>
+              <p class="about-me__greeting-text">Будем знакомы:</p>
+            </div>
+
+            <ul class="about-me__info-list">
+              <li class="about-me__info-item">
+                <a href="resume-page.html" class="about-me__info-link">Резюме</a>
+              </li>
+              <li class="about-me__info-item">
+                <a href="projects.html" class="about-me__info-link">Проекты</a>
+              </li>
+              <li class="about-me__info-item">
+                <a href="contacts.html" class="about-me__info-link">Навыки</a>
+              </li>
+            </ul>
+
+            <p class="about-me__info-text">Привет, меня зовут Алексей Чудновец. В настоящий момент моя профессия - <a href="https://www.pravda.com.ua/rus/articles/2007/11/19/4427676/">горноспасатель</a>, но я очень хочу полностью изменить ее и стать frontend-разработчиком.</p>
+          </div>
+
+        </div>
+      </section>
+
+
     </main>
+    <include src="source/components/footer.html"></include>
+
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
