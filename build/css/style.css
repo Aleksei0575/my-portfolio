@@ -676,7 +676,15 @@ input:invalid {
   line-height: 16px;
   color: #4d4d4d; }
   .resume__item-description a {
-    color: #e83a56; }
+    color: #61d0d4;
+    font-weight: 700;
+    font-family: "Open Sans", "Arial", sans-serif; }
+    .resume__item-description a:hover, .resume__item-description a:focus {
+      outline: none;
+      cursor: pointer;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      color: #e83a56; }
 
 .resume__item-section-date {
   font-size: 14px;

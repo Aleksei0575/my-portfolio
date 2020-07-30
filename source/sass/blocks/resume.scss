@@ -59,7 +59,14 @@
   color: $darker-gray;
 
   a {
-    color: $light-red;
+    color: #61d0d4;
+    @include open-sans-b;
+
+    &:hover,
+    &:focus {
+      @include hover;
+      color: $light-red;
+    }
   }
 }
 
