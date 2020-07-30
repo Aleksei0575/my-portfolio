@@ -942,11 +942,11 @@ input:invalid {
   .projects__slider-item img {
     height: 100%; }
 
-.project__description {
+.projects__description {
   width: 45%;
   margin-top: 25px; }
 
-.project__description-title {
+.projects__description-title {
   font-size: 18px;
   line-height: 20px;
   display: -webkit-box;
@@ -966,30 +966,30 @@ input:invalid {
   background-color: #69d2d7;
   border-radius: 50%; }
 
-.project__description-block h3 {
+.projects__description-block h3 {
   font-size: 16px;
   line-height: 18px;
   color: #4d4d4d; }
-  .project__description-block h3 span {
+  .projects__description-block h3 span {
     text-transform: uppercase;
     color: #e83a56; }
 
-.project__description-block p {
+.projects__description-block p {
   font-size: 14px;
   line-height: 16px;
   text-decoration: underline; }
 
-.project__description-block ul {
+.projects__description-block ul {
   font-size: 14px;
   line-height: 16px;
   list-style-type: square; }
 
-.project__description-block p:last-of-type {
+.projects__description-block p:last-of-type {
   text-decoration: none; }
-  .project__description-block p:last-of-type a {
+  .projects__description-block p:last-of-type a {
     font-weight: 400;
     font-family: "Open Sans", "Arial", sans-serif; }
-    .project__description-block p:last-of-type a:hover, .project__description-block p:last-of-type a:focus {
+    .projects__description-block p:last-of-type a:hover, .projects__description-block p:last-of-type a:focus {
       outline: none;
       cursor: pointer;
       -webkit-transition: 0.3s;
@@ -1109,11 +1109,11 @@ input:invalid {
     text-align: center; } }
 
 @media (max-width: 1023px) {
-  .project__description {
+  .projects__description {
     width: 40%; } }
 
 @media (max-width: 1023px) and (max-width: 869px) and (min-width: 768px) {
-  .project__description {
+  .projects__description {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1121,26 +1121,26 @@ input:invalid {
     margin-top: 40px; } }
 
 @media (max-width: 1023px) {
-  .project__description-title {
+  .projects__description-title {
     font-size: 16px;
     line-height: 18px;
     width: 100px;
     height: 100px; } }
 
 @media (max-width: 1023px) and (max-width: 869px) and (min-width: 768px) {
-  .project__description-title {
+  .projects__description-title {
     font-size: 14px;
     line-height: 16px;
     margin-right: 4%; } }
 
 @media (max-width: 1023px) {
-  .project__description-block h3 {
+  .projects__description-block h3 {
     font-size: 14px;
     line-height: 16px; }
-  .project__description-block p {
+  .projects__description-block p {
     font-size: 12px;
     line-height: 14px; }
-  .project__description-block ul {
+  .projects__description-block ul {
     font-size: 12px;
     line-height: 14px; } }
 
@@ -1195,7 +1195,7 @@ input:invalid {
     margin-right: 25px !important; } }
 
 @media (max-width: 767px) and (max-width: 767px) and (min-width: 490px) {
-  .project__description {
+  .projects__description {
     width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1203,7 +1203,7 @@ input:invalid {
     margin-top: 40px; } }
 
 @media (max-width: 767px) and (max-width: 489px) and (min-width: 280px) {
-  .project__description {
+  .projects__description {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1214,15 +1214,15 @@ input:invalid {
             flex-direction: column; } }
 
 @media (max-width: 767px) {
-  .project__description-title {
+  .projects__description-title {
     font-size: 12px;
     line-height: 14px;
     margin-right: 4%; }
-  .project__description-block {
+  .projects__description-block {
     width: 75%; } }
 
 @media (max-width: 767px) and (max-width: 489px) and (min-width: 280px) {
-  .project__description-block {
+  .projects__description-block {
     width: 100%; } }
 
 @media (max-width: 767px) and (max-width: 500px) and (min-width: 280px) {
@@ -1395,14 +1395,6 @@ input:invalid {
       text-transform: uppercase;
       font-size: 14px;
       line-height: 16px; }
-    .form-submit__item input:invalid {
-      -webkit-box-shadow: inset 0 0 0 4px red;
-              box-shadow: inset 0 0 0 4px red;
-      background-color: dodgerblue; }
-    .form-submit__item input:valid {
-      -webkit-box-shadow: inset 0 0 0 2px #09b48e;
-              box-shadow: inset 0 0 0 2px #09b48e;
-      background-color: greenyellow; }
   .form-submit__item textarea {
     width: 100%;
     margin-bottom: 15px;
@@ -1445,14 +1437,6 @@ input:invalid {
       text-transform: uppercase;
       font-size: 14px;
       line-height: 16px; }
-    .form-submit__item textarea:invalid {
-      -webkit-box-shadow: inset 0 0 0 4px red;
-              box-shadow: inset 0 0 0 4px red;
-      background-color: dodgerblue; }
-    .form-submit__item textarea:valid {
-      -webkit-box-shadow: inset 0 0 0 2px #09b48e;
-              box-shadow: inset 0 0 0 2px #09b48e;
-      background-color: greenyellow; }
 
 .form-submit__user-control {
   display: -webkit-box;

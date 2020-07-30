@@ -54,15 +54,15 @@
       @include font (14, 16);
     }
 
-    &:invalid {
-      box-shadow: inset 0 0 0 4px red;
-      background-color: dodgerblue;
-    }
-
-    &:valid {
-      box-shadow: inset 0 0 0 2px $green-hover;
-      background-color: greenyellow;
-    }
+    //&:invalid {
+    //  box-shadow: inset 0 0 0 4px red;
+    //  background-color: dodgerblue;
+    //}
+    //
+    //&:valid {
+    //  box-shadow: inset 0 0 0 2px $green-hover;
+    //  background-color: greenyellow;
+    //}
   }
 
   textarea {
@@ -91,15 +91,15 @@
       @include font (14, 16);
     }
 
-    &:invalid {
-      box-shadow: inset 0 0 0 4px red;
-      background-color: dodgerblue;
-    }
-
-    &:valid {
-      box-shadow: inset 0 0 0 2px $green-hover;
-      background-color: greenyellow;
-    }
+    //&:invalid {
+    //  box-shadow: inset 0 0 0 4px red;
+    //  background-color: dodgerblue;
+    //}
+    //
+    //&:valid {
+    //  box-shadow: inset 0 0 0 2px $green-hover;
+    //  background-color: greenyellow;
+    //}
   }
 }
 
