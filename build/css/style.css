@@ -825,7 +825,7 @@ input:invalid {
 
 @media (max-width: 767px) and (max-width: 599px) and (min-width: 280px) {
   .resume-aside__skills {
-    width: 45%; } }
+    width: 48%; } }
 
 @media (max-width: 767px) and (max-width: 599px) and (min-width: 280px) {
   .resume-aside__tools {
@@ -1756,7 +1756,7 @@ input:invalid {
       content: "";
       position: absolute;
       display: block;
-      top: 3px;
+      top: 0;
       left: 0;
       fill: #ffffff; }
     .footer__item--academy a {
@@ -1788,7 +1788,6 @@ input:invalid {
       content: "";
       position: absolute;
       display: block;
-      top: 3px;
       left: 0; }
     .footer__item--copyright svg {
       fill: #ffffff;
